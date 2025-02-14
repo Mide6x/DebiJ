@@ -23,7 +23,6 @@ const Navigation: React.FC = () => {
       style={{
         ...getNavStyle(),
         padding: "0.5rem 2rem", // Reduced padding
-        marginTop: "20px", // Adjusted margin
       }}
     >
       <div className="logo">debixson</div>

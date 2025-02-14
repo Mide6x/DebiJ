@@ -58,13 +58,14 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #000000; /* Ensure text color is black */
     position: relative;
     font-size: 0.9rem;
 }
 
 .nav-links a.active {
     text-decoration: none;
+    color: #000000; /* Ensure active link text color is black */
     font-weight: 500;
 }
 
@@ -323,6 +324,34 @@ h1 {
 @media (max-width: 1200px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        border-bottom: 1px solid #000000;
+        text-decoration: none !important;
+        z-index: 1000; 
+        height: 70px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        text-decoration: none !important;
+        color: #000000;
+    }
+
+    .home-content {
+        margin-top: 70px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .works-content {
+        margin-top: 70px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .contact-content {
+        margin-top: 70px !important;
+        margin-bottom: 35px !important;
     }
 }
 

@@ -35,6 +35,7 @@ const Contact: React.FC = () => {
             </div>
           </form>
         </div>
+        <p>A poet, exactly what you need right now.</p>
       </main>
     </div>
   );
