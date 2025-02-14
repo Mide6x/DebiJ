@@ -1,12 +1,30 @@
 import React, { useEffect } from "react";
 
+// Extend the Window interface to include instgrm
+declare global {
+  interface Window {
+    instgrm: {
+      Embeds: {
+        process: () => void;
+      };
+    };
+  }
+}
+
 const Works: React.FC = () => {
   useEffect(() => {
-    // Load Instagram embed script
-    const script = document.createElement("script");
-    script.src = "//www.instagram.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    const loadInstagramEmbed = () => {
+      const script = document.createElement("script");
+      script.src = "//www.instagram.com/embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+      return () => {
+        document.body.removeChild(script);
+      };
+    };
+
+    window.instgrm?.Embeds?.process();
+    loadInstagramEmbed();
   }, []);
 
   return (
@@ -23,11 +41,15 @@ const Works: React.FC = () => {
 
           <div className="gallery">
             <div className="gallery-item">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DGAf2eNIX0T/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
+              <div className="video-container">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DGAf2eNIX0T/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"
+                  data-instgrm-captioned
+                  style={{ background: "transparent" }}
+                ></blockquote>
+              </div>
               <p className="caption">
                 In the spirit of the "month of love" what's something you
                 inherited from the people before you that you're learning to
@@ -35,18 +57,30 @@ const Works: React.FC = () => {
               </p>
             </div>
             <div className="gallery-item">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DFVGvmGy8FY/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
+              <div className="video-container">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DFPeSVfSgXc/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"
+                  data-instgrm-captioned
+                  style={{ background: "transparent" }}
+                ></blockquote>
+              </div>
               <p className="caption">
                 Rise Africa: "Does this make you feel uncomfortable?" series.
               </p>
             </div>
             <div className="gallery-item">
-              <img src="/deb3.png" alt="Performance at event" />
-              <p className="caption">Pan-Africanism</p>
+              <div className="video-container">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/Cydv3a5ubUa/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"
+                  data-instgrm-captioned
+                  style={{ background: "transparent" }}
+                ></blockquote>
+              </div>
+              <p className="caption">World Poetry Slam</p>
             </div>
           </div>
         </div>
