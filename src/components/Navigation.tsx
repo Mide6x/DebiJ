@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
         padding: "0.5rem 2rem", // Reduced padding
       }}
     >
-      <div className="logo">debixson</div>
+      <div className="logo">debixson 👋 </div>
       <div className="nav-links">
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>
           home

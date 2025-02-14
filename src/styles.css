@@ -1,3 +1,6 @@
+/* Import animations */
+@import './animations.css';
+
 :root {
     --pink-bg: #ffebee;
     --blue-bg: #f3f6ff;
@@ -16,6 +19,7 @@ body {
     min-height: 100vh;
     width: 100%;
     padding: 2rem;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .home-page {
@@ -61,6 +65,7 @@ nav {
     color: #000000; /* Ensure text color is black */
     position: relative;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 .nav-links a.active {
@@ -74,9 +79,14 @@ nav {
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1px;
-    background-color: var(--text-color);
+    background: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 main {
@@ -119,6 +129,7 @@ h1 {
     width: 400px;
     height: 400px;
     margin-bottom: 3rem;
+    animation: scaleIn 1s ease-out;
 }
 
 .profile-circle {
@@ -129,6 +140,11 @@ h1 {
     overflow: hidden;
     position: relative;
     z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.profile-circle:hover {
+    transform: scale(1.02);
 }
 
 .circle-ring {
@@ -141,6 +157,7 @@ h1 {
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 1;
+    animation: rotateIn 1.2s ease-out;
 }
 
 .profile-info {
@@ -153,11 +170,13 @@ h1 {
     font-weight: bold;
     margin-bottom: 0.5rem;
     letter-spacing: 0.05em;
+    animation: slideIn 0.8s ease-out;
 }
 
 .subtitle {
     font-size: 1.2rem;
     color: var(--text-color);
+    animation: slideIn 0.8s ease-out 0.2s backwards;
 }
 
 .right-section {
@@ -181,11 +200,13 @@ h1 {
     border: 1px solid #000000;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .link-item:hover {
     transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .arrow-circle {
@@ -196,6 +217,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
 }
 
 .arrow-circle2 {
@@ -207,6 +230,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.arrow-circle:hover, .arrow-circle2:hover {
+    transform: scale(1.1);
 }
 
 .arrow {
@@ -236,6 +265,7 @@ h1 {
     overflow-x: auto; /* Allow horizontal scrolling */
     padding-bottom: 2rem;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .gallery-item {
@@ -247,6 +277,13 @@ h1 {
     border: 1px solid #000000;
     scroll-snap-align: start;
     margin-right: 1rem; /* Add margin for spacing between items */
+    animation: scaleIn 0.6s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .caption {
@@ -407,6 +444,7 @@ h1 {
     border: 1px solid #000000;
     font-family: 'Istok Web', sans-serif;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .form-group textarea {
@@ -418,6 +456,8 @@ h1 {
 .form-group textarea:focus {
     outline: none;
     border-color: rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries */
@@ -451,4 +491,19 @@ h1 {
     h1 {
         text-align: center;
     }
-} 
+}
+
+/* Add stagger effect to multiple items */
+.links-section .link-item {
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.links-section .link-item:nth-child(1) { animation-delay: 0.1s; }
+.links-section .link-item:nth-child(2) { animation-delay: 0.2s; }
+.links-section .link-item:nth-child(3) { animation-delay: 0.3s; }
+.links-section .link-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Gallery items stagger effect */
+.gallery .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery .gallery-item:nth-child(3) { animation-delay: 0.3s; } 

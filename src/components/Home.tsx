@@ -25,29 +25,61 @@ const Home: React.FC = () => {
           <div className="right-section">
             <h1>HOME</h1>
             <div className="links-section">
-              <div className="link-item">
+              <div
+                className="link-item"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/reel/DFItyVCoOBa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA",
+                    "_blank"
+                  )
+                }
+              >
                 <div className="arrow-circle">
                   <span className="arrow">→</span>
                 </div>
                 <span className="text">Rise Africa</span>
               </div>
-              <div className="link-item">
+              <div
+                className="link-item"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/reel/Cydv3a5ubUa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA",
+                    "_blank"
+                  )
+                }
+              >
                 <div className="arrow-circle">
                   <span className="arrow">→</span>
                 </div>
                 <span className="text">World Poetry Slam</span>
               </div>
-              <div className="link-item">
+              <div
+                className="link-item"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/reel/Cqa4AA4D25H/?igshid=MzRlODBiNWFlZA%3D%3D",
+                    "_blank"
+                  )
+                }
+              >
                 <div className="arrow-circle">
                   <span className="arrow">→</span>
                 </div>
-                <span className="text">Pan-Africanism</span>
+                <span className="text">LipFest Winner</span>
               </div>
-              <div className="link-item">
+              <div
+                className="link-item"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/reel/C4QqNPBINgA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA",
+                    "_blank"
+                  )
+                }
+              >
                 <div className="arrow-circle">
                   <span className="arrow">→</span>
                 </div>
-                <span className="text">NGYouthsSDGs</span>
+                <span className="text">International Womens Day</span>
               </div>
             </div>
           </div>
